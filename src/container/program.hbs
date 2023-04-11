@@ -1,0 +1,70 @@
+<div>
+  <section>
+  {{#with program/excursion}}
+    <h2>/{{name}}/</h2>
+    {{#with location}}
+      <strong>{{city}} {{country}}</strong>
+    {{/with}}
+    <ul>
+      <em>{{date}}</em>
+    </ul>
+  </section>
+   
+    <main>
+
+     {{> title data="Program"  big=false }} 
+      <ul>
+       
+      {{#each program}}
+      <hr>
+        <strong><li>{{name}} </strong><em>({{type}} ({{duration}})</em></li>
+        <br>
+        {{#with details}}
+       <ul>{{museum.name}} 
+        {{venue.name}}  
+        <ul>
+        {{#with museum.location}}
+          <address>{{address}} ({{city}} {{country}}) </address>         
+        {{/with}}
+        </ul>
+        <ul>
+        {{#with venue.location}}
+          <address>{{address}} ({{city}} {{country}}) </address>         
+        {{/with}}
+        </ul>
+       </ul>    
+        <br>  
+        
+        <h3><em>Exhibits</em></h3>  
+
+         {{#with museum}}
+            <ul>
+              {{#each exhibits}}
+                <li>{{name}} </li>
+              <em> <ul>{{artist}}</ul></em><br>
+              <ul><q>{{description}}</q></ul>
+              <br>
+              {{/each}}       
+            </ul>
+         {{/with}}
+         
+         <br>  
+        {{/with}}   
+
+        {{#with details}}
+          <ul>
+            {{#each performers}}
+              <li>{{name}} </li>
+              <ul><q>{{type}}</q></ul>              
+              <br>            
+            {{/each}}       
+          </ul>
+        {{/with}}          
+        {{/each}}  
+                      
+    </ul>
+    </main>
+     
+  {{/with}}
+  
+</div>
