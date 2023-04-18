@@ -1,0 +1,73 @@
+<div>
+  >
+  <em> {{category}}</em>
+  <section>
+    <h2> {{name}}</h2>
+    <q> {{description}}</q>
+    <br />
+    <br />
+    <b>Price : {{price}}</b>
+  </section>
+  <section>
+    {{#with features}}
+      <b> Processor: </b>
+      {{#each processor}}
+        {{this}}
+      {{/each}}/
+      <b> Memory: </b>
+      {{#each memory}}
+        {{this}}
+      {{/each}}/
+      <b> Storage: </b>
+      {{#each storage}}
+        {{this}}
+      {{/each}}
+      <b> Display : </b>
+      {{#each display}}
+        {{this}}
+      {{/each}}/
+      <b> Graphics: </b>
+      {{#each graphics}}
+        {{this}}
+      {{/each}}/
+      <b> Battery: </b>
+      {{#each battery}}
+        {{this}}
+      {{/each}}/
+      <b> weight: </b>
+      {{weight}}/
+      <b>Operating system: </b>
+      {{operating_system}}/
+      <b>Port :</b>
+      {{#each ports}}
+        {{type}}
+        ({{count}})
+        {{#each features}}
+          {{this}}|
+        {{/each}}
+      {{/each}}
+
+      <div>
+        <br />
+        <ul>
+          <h4>Accesories :</h4>
+          {{#each accessories}}
+            <li>
+              {{name}}
+              <ul>
+                price :
+                {{price}}
+              </ul>
+
+            </li>
+            <br />
+          {{/each}}
+
+        </ul>
+      </div>
+
+    {{/with}}
+
+  </section>
+
+</div>
