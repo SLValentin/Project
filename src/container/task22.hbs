@@ -1,0 +1,94 @@
+<div>
+  {{#with page_header}}
+    <h1 class='text-center'>{{title}}</h1>
+    <div
+      class='text-center text-lowercase'
+    >{{description}}</div>
+  {{/with}}
+  <br />
+  {{#with section/about_us}}
+    <div class='card'>
+      <div class='card-body'>
+        <div
+          class='display-6 text-end'
+        >{{title_list.main}}</div>
+        <h2 class='text-end'>{{title_list.sub}} </h2>
+        <button class='btn btn-outline-info'>
+          {{button.text}}
+        </button>
+      </div>
+    </div>
+  {{/with}}
+  <section>
+    {{#with section/advantage}}
+      <div class='display-5 text-muted'> {{title}}</div>
+      <br />
+      {{#with efficiency}}
+        <div class='card'>
+          <div class='card-body'>
+            <span
+              class='display-4 text-secondary'
+            >{{title}}</span>
+            <br />
+            <br />
+            <h6 class='text-lowercase'> {{sub_title}}</h6>
+            <q class='text-lowercase'>{{description}}</q>
+            <br />
+            <br />
+            <button
+              class='btn btn-outline-warning'
+            >{{button}}</button>
+          </div>
+        </div>
+      {{/with}}
+      <br />
+
+      {{#with innovation}}
+        <div class='card'>
+          <div class='card-body'>
+            <div
+              class='text-center text-secondary display-4'
+            > {{title}}</div>
+            <br />
+            <br />
+            <h6 class='text-center'>{{sub_title}}</h6>
+            <q class='text-lowercase'>{{description}}</q>
+            <br />
+            <br />
+            <button
+              class='btn btn-outline-warning'
+            >{{button}}</button>
+
+          </div>
+        </div>
+      {{/with}}
+    {{/with}}
+  </section>
+
+  <section>
+    {{#with section/agreement}}
+      <div class='display-5'> {{title}}</div>
+      <br />
+      <div class='card'>
+        <div class='card-body'>
+          <h5>{{info/sub_title}}</h5>
+          <br />
+          <div class='card'>
+            <div class='card-body'>
+              <q
+                class='text-lowercase'
+              >{{info/detail/text}}</q>
+              <br />
+              <br />
+              <button
+                class='btn btn-success'
+              >{{info/detail/button}}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    {{/with}}
+  </section>
+  <br />
+</div>
