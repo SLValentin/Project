@@ -21,7 +21,7 @@
     />
   </head>
 
-  <body>
+  <body class="p-5">
     {{#with header}}
       <header>
         <div>
@@ -38,12 +38,13 @@
         <div>
           <address>{{address}}</address>
         </div>
-        <br />
-        <hr />
+        
+        <hr / class="my-5">
       </header>
     {{/with}}
-
+<div class="mb-5">
 {{>nav}}
+</div>
     {{{body}}}
     {{>footer social=footer.social firstname=header.name.firstname lastname=header.name.lastname address=header.address}}
   </body>
