@@ -1,0 +1,32 @@
+<section>
+  {{#with newsBlock}}
+    <h2 class='text-center mb-4'>{{title}}</h2>
+    <div class='row'>
+      {{#each cards}}
+        <div class='card col-3 text-bg-dark g-3'>
+          <div class='card-header'>{{title}}
+            <div>
+              {{#if isNew}}
+                <div
+                  class='badge rounded-pill text-bg-success'
+                >
+                  Нове
+                </div>
+              {{/if}}
+              {{#if isTop}}
+                <div
+                  class='badge rounded-pill text-bg-danger'
+                >
+                  Топ
+                </div>
+              {{/if}}
+            </div>
+          </div>
+          <div class='card-body'>
+            <q>{{description}}</q>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  {{/with}}
+</section>
