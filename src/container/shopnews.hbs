@@ -1,0 +1,23 @@
+<main>
+  {{>breadcrumb}}
+  {{#with newsData}}
+    <div class='card mb-5'>
+      <img
+        class='img-card-top col-12'
+        src='{{photo}}'
+        height='200'
+        width='400'
+      />
+    </div>
+    {{#with head}}
+      <div class='display-3 mb-4'>{{heading}}</div>
+      <div>{{description}}</div>
+    {{/with}}
+  {{/with}}
+   <hr class="m-5">
+
+  {{>shoppost isNew=idNew}}
+   <hr class="m-5">
+   {{>shopaction}}
+    <hr class="m-5">
+</main>
