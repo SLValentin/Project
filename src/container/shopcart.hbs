@@ -1,0 +1,53 @@
+<main>
+  <section>
+    {{#with header}}
+      <h2 class='mb-3'>{{title}}</h2>
+      {{#with button}}
+        <a
+          href='{{href}}'
+          class='btn btn-outline-secondary'
+        >{{text}}</a>
+      {{/with}}
+    {{/with}}
+  </section>
+  <hr class='m-5' />
+
+  {{>cartGoodsItem}}
+
+  <hr class="m-5">
+
+  <section>
+    {{#with total}}
+      <h3 class="mb-3">{{title}}</h3>
+      <h4 class="mb-3"> {{amount}}</h6>
+      <span class="mb-3">{{delivery}}</span>
+      <br >
+      
+      {{#each buttons}}
+        <a href="{{link}}" class="mt-4 btn {{#if isSuccess}}btn-success{{else}}btn-outline-success {{/if}}">{{text}}</a>
+        <br>
+      {{/each}}
+    {{/with}}
+  </section>
+  <hr class="m-5">
+
+  {{>shopcard goodsBlock=goodsOtherBlock}}
+  <hr class="m-5">
+  <section>
+    {{#with subscribe}}
+    <div class="card text-bg-dark">
+        <div class="card-body ">
+            <h2 class="m-3">{{header}}</h2>
+        <span class="m-3">{{description}}</span>
+        <br>
+        {{#each buttons}}
+        <div class="p-2">
+        <a  href="{{link}}" class="btn btn-primary m-2 " >{{text}}</a>
+        </div>
+        {{/each}}
+        </div>
+    </div>
+    {{/with}}
+  </section>
+  <hr class="m-5">
+</main>
