@@ -1,0 +1,124 @@
+<main>
+  <h1 class="ms-2">{{header}}</h1>
+
+  <section>
+    {{#with purchase}}
+      <div class='nav nav-tabs my-2 mb-5'>
+        {{#each tabs}}
+          <div class='nav-item'>
+            <a class='nav-link {{#if @first}}active {{/if}}'>{{this}}</a>
+          </div>
+        {{/each}}
+      </div>
+    
+  {{#with actionBlock}}
+  <div class="row">
+    <div class=" col-3">    
+      <input placeholder="{{input/placeholder}}" class="form-control" >
+    </div>
+  
+    {{#each buttons}}
+      <a href="{{link}}" class=" me-3 btn  
+      {{#if isSuccess}} btn-success col-1{{/if}}
+       {{#if isOutline}} btn-outline-success col-2{{/if}}
+        {{#if isDanger}} btn-outline-danger col-2{{/if}}
+      ">{{text}}</a>  
+    {{/each}}
+  </div>
+  {{/with}}
+
+  <hr class="m-5">
+ {{>purchaseitem}}
+{{/with}}
+  </section>
+  <hr class="m-5">
+
+  <section>
+    {{#with userInfo}}
+    <h2 class="mb-4">{{title}}</h2>
+      {{#with profileData}}
+    <div class="card">
+      <h3 class="card-title mb-4">{{title}}</h3>
+
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+          {{#with fullName}}
+          <div class=" text-center col-3 me-5">
+            <div >{{surname.title}}</div>
+            <strong >{{surname.value}}</strong>
+          </div>
+          <div class=" text-center col-3 me-5">
+            <div >{{name.title}}</div>
+            <strong >{{name.value}}</strong>
+          </div>
+          <div class=" text-center col-3 me-5">
+            <div >{{middleName.title}}</div>
+            <strong >{{middleName.value}}</strong>
+          </div>
+          {{/with}}
+          </div>
+        </div>
+      </div>
+
+      <div class="card mt-3">
+        <div class="card-body">
+          <div class="row">
+          {{#with otherInfo}}
+          <div class=" text-center col-3 me-5">
+            <div >{{birthday.title}}</div>
+            <strong >{{birthday.value}}</strong>
+          </div>
+          <div class=" text-center col-3 me-5">
+            <div >{{sex.title}}</div>
+            <strong >{{sex.value}}</strong>
+          </div>
+          <div class=" text-center col-3 me-5">
+            <div >{{language.title}}</div>
+            <strong >{{language.value}}</strong>
+          </div>
+          {{/with}}
+          </div>
+        </div>
+      </div>
+
+       <div class="card mt-3">
+        <div class="card-body">
+          <div class="row">
+          {{#with otherInfo}}
+          <div class=" text-center col-3 me-5">
+            <div >{{birthday.title}}</div>
+            <strong >{{birthday.value}}</strong>
+          </div>
+          <div class=" text-center col-3 me-5">
+            <div >{{sex.title}}</div>
+            <strong >{{sex.value}}</strong>
+          </div>
+          <div class=" text-center col-3 me-5">
+            <div >{{language.title}}</div>
+            <strong >{{language.value}}</strong>
+          </div>
+          {{/with}}
+          </div>
+        </div>
+      </div>
+    {{/with}}
+
+       <div class="card mt-3">
+         <div class="card-body">
+           <div class="row">
+             {{#each buttons}}
+             <a href="{{link}}" class=" col-3 me-5 btn 
+             {{#if isPrimary }} btn-primary ms-5{{/if}}
+             {{#if isSecondary }} btn-outline-secondary{{/if}}
+             {{#if isDanger}} btn-outline-danger{{/if}}
+             ">{{text}}</a>
+             {{/each}}
+           </div>
+         </div>
+      </div>
+    </div>
+    {{/with}}
+  </section>
+  <hr class="m-5">
+</main>
