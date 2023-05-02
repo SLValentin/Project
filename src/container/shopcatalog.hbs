@@ -1,0 +1,115 @@
+<main>
+  <div class='breadcrumb mb-5'>
+    {{#each breadcrumb}}
+      <div class='breadcrumb-item'>
+        <a href='{{url}}'>{{name}}</a>
+      </div>
+    {{/each}}
+  </div>
+  <h2>{{header}}</h2>
+
+  <div class='row mt-4'>
+    {{#each sortBlock}}
+      <div class='col-3'>
+        <select class='form-select'>
+          <option selected>{{placeholder}}</option>
+          {{#each options}}
+            <option value='{{value}}'> {{text}}</option>
+          {{/each}}
+        </select>
+      </div>
+    {{/each}}
+  </div>
+
+  <div class='row col-12 ms-3 mt-5'>
+    <div class='row col-3'>
+      <div class='card'>
+        {{#with filterBlock}}
+          <div class='list-group list-group-flush'>
+            {{#with sellers}}
+              <div class='list-group-item'>
+                <h6>{{title}}</h6>
+                <div class='form-check'>
+                  {{#each list}}
+                    <input
+                      type='checkbox'
+                      class='form-check-input'
+                    />
+                    <option
+                      value='{{value}}'
+                    >{{value}}</option>
+                  {{/each}}
+                </div>
+              </div>
+            {{/with}}
+
+            {{#with brands}}
+              <div class='list-group-item'>
+                <h6>{{title}}</h6>
+
+                <input
+                  placeholder='{{input.placeholder}}'
+                  class='form-control mb-3'
+                />
+                <div class='form-check'>
+                  {{#each options}}
+                    <input
+                      type='checkbox'
+                      class='form-check-input'
+                    />
+                    <option
+                      value='{{value}}'
+                    >{{value}}</option>
+                  {{/each}}
+                </div>
+              </div>
+            {{/with}}
+
+            {{#with price}}
+              <div class='list-group-item'>
+                <h6>{{title}}</h6>
+
+                <input
+                  class='form-control mb-3 mt-3'
+                  placeholder='{{range.from}}'
+                />
+                <input
+                  class='form-control mb-3'
+                  placeholder='{{range.to}}'
+                />
+                <a
+                  href='{{button.link}}'
+                  class='btn btn-outline-secondary'
+                >{{button.text}}</a>
+              </div>
+            {{/with}}
+
+            {{#each filterList}}
+              <div class='list-group-item'>
+                <h6>{{title}}</h6>
+                <div class='form-check'>
+                  {{#each options}}
+                    <input
+                      type='checkbox'
+                      class='form-check-input'
+                    />
+                    <option
+                      value='{{value}}'
+                    >{{value}}</option>
+                  {{/each}}
+                </div>
+              </div>
+            {{/each}}
+          </div>
+        {{/with}}
+      </div>
+    </div>
+
+    <div class='row col-8'>
+      {{>catalogItem}}     
+    </div>   
+  </div>
+  <br>
+  {{>shopaction}}
+  <hr class="mt-3 mb-3">
+</main>
