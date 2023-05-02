@@ -41,7 +41,106 @@ router.get('/', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('index', {})
+  res.render('index', {
+    layout: 'index',
+    Html: [
+      {
+        text: 'summary',
+        link: 'http://localhost:3000/summary',
+      },
+      {
+        text: 'skills',
+        link: 'http://localhost:3000/skills',
+      },
+      {
+        text: 'education',
+        link: 'http://localhost:3000/education',
+      },
+      {
+        text: 'work',
+        link: 'http://localhost:3000/work',
+      },
+      {
+        text: 'person',
+        link: 'http://localhost:3000/person',
+      },
+      {
+        text: 'bio',
+        link: 'http://localhost:3000/bio',
+      },
+      {
+        text: 'program',
+        link: 'http://localhost:3000/program',
+      },
+      {
+        text: 'web',
+        link: 'http://localhost:3000/web',
+      },
+      {
+        text: 'js',
+        link: 'http://localhost:3000/js',
+      },
+      {
+        text: 'car',
+        link: 'http://localhost:3000/car',
+      },
+      {
+        text: 'mac',
+        link: 'http://localhost:3000/mac',
+      },
+      {
+        text: 'facebook',
+        link: 'http://localhost:3000/facebook',
+      },
+    ],
+
+    bootstrap: [
+      {
+        text: 'task21',
+        link: 'http://localhost:3000/task21',
+      },
+      {
+        text: 'task22',
+        link: 'http://localhost:3000/task22',
+      },
+      {
+        text: 'task31',
+        link: 'http://localhost:3000/task31',
+      },
+      {
+        text: 'shophome',
+        link: 'http://localhost:3000/shophome',
+      },
+      {
+        text: 'shopproduct',
+        link: 'http://localhost:3000/shopproduct',
+      },
+      {
+        text: 'shopnews',
+        link: 'http://localhost:3000/shopnews',
+      },
+      {
+        text: 'shoporder',
+        link: 'http://localhost:3000/shoporder',
+      },
+      {
+        text: 'shopcart',
+        link: 'http://localhost:3000/shopcart',
+      },
+      {
+        text: 'shopprofile',
+        link: 'http://localhost:3000/shopprofile',
+      },
+      {
+        text: 'shopreview',
+        link: 'http://localhost:3000/shopreview',
+      },
+      {
+        text: 'shopcatalog',
+        link: 'http://localhost:3000/shopcatalog',
+      },
+    ],
+  })
   //                  ↑↑ сюди вводимо JSON дані
 })
 
@@ -240,7 +339,7 @@ router.get('/work', function (req, res) {
 router.get('/person', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('person', {
-    layout: 'person',
+    layout: 'basic',
 
     person: {
       name: 'Emma Johnson',

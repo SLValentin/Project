@@ -1,7 +1,7 @@
 <div>
   {{#with person}}
     <section>
-      <h2>{{name}}</h2>
+      <h2 class="mb-5">{{name}}</h2>
       <hr />
       <table>
         <tbody>
@@ -44,11 +44,11 @@
       {{> title data="Work Experience"  big=false }}
       <ul>
       {{#each workExperience}}
-        <li>
-         <div>{{title}} </div>         
-         <br>
-         <div>{{startDate}}---{{endDate}}</div>
-         <br>
+        <li class="mb-4">
+         <div class="mb-4">{{title}} </div>         
+         
+         <div class="mb-4"> {{startDate}}---{{endDate}}</div>
+         
          <div>
           <ul> {{#each responsibilities}}
              <li> {{this}}</li>
