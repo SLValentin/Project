@@ -82,59 +82,7 @@
     </div>
 
     <hr class="mt-5 mb-5">    
- {{#each reviewList}}
-    <div class="card mt-5">
-      
-      <div class="card mt-3">
-        <div class="card-body">
-          {{#with title}}
-            <h5 >{{userName}}</h5>
-            <span class="mb-5">{{caption}}</span>
-            <br>
-            <span >{{date}}</span>           
-          {{/with}}
-        </div>
-      </div>
-      {{#with reviewBody}}
-      <div class="card">
-        <div class="card-body">
-          {{#with seller}}
-            <div class="mb-3">{{title}} : {{value}}</div>            
-          {{/with}}
-         
-          {{#with rating}}
-          <div class="mb-3">{{title}} : {{value}}</div>
-          {{/with}}
-          {{#each text}}
-            <p>{{this}}</p>
-          {{/each}}
-          {{#with advantages}}
-            <strong >{{title}}</strong>
-            <div class="mb-4">{{text}}</div>
-          {{/with}}
-          {{#with disadvantages}}
-            <strong>{{title}}</strong>
-            <div class="mb-4">{{text}}</div>
-          {{/with}}
-          {{#each images}}
-            <img src="{{this}}" class="me-2">
-          {{/each}}
-
-        </div>
-      </div>
-          {{#each coments}}
-            <div class="card m-5 mb-1">
-              <div class="card-body">
-               <h6>{{userName}}</h6>
-                <div class="mb-3">{{date}}</div>
-                <div>{{text}}</div>
-
-              </div>
-            </div>
-          {{/each}}
-      {{/with}}
-    </div>
-     {{/each}}
+ {{> reviewItem}}
   </div>
   <div class="mt-5"> {{>shopaction}}</div>
   <hr class="m-5"> 
