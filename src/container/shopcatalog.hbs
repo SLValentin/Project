@@ -106,7 +106,9 @@
     </div>
 
     <div class='row col-8'>
-      {{>catalogItem}}     
+      {{#each goodsList}}
+        {{>catalogItem}}  
+      {{/each}}   
     </div>   
   </div>
   <br>

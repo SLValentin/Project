@@ -81,8 +81,10 @@
       {{/with}}
     </div>
 
-    <hr class="mt-5 mb-5">    
- {{> reviewItem}}
+    <hr class="mt-5 mb-5">  
+    {{#each reviewList}}  
+      {{> reviewItem}}
+    {{/each}}
   </div>
   <div class="mt-5"> {{>shopaction}}</div>
   <hr class="m-5"> 
